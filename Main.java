@@ -3,21 +3,21 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
+    static String line;
+    static String result;
 
     public static void main(String[] args) {
 
-        String line;
-        String result;
         Scanner scanner = new Scanner(System.in);
-        try {
-            System.out.println("Введите арифметическое выражение в одну строку, выделяя каждый аргумент двойными кавычками \"\" ");
-            String string = scanner.nextLine();
-            if (string.matches("\".*\".\\d*|\".*\"")) {
-                line = string.replaceAll("\"", "");
+        System.out.println("Введите арифметическое выражение в одну строку, выделяя каждый аргумент двойными кавычками \"\" ");
+        String string = scanner.nextLine();
+        if (string.matches("\".*\".\\d*|\".*\"")) {
+            line = string.replaceAll("\"", "");
             } else {
                 System.out.println("Аргументы выражения должы быть выделены двойными кавычками.");
                 throw new IllegalArgumentException();
             }
+        try {
             char sign = checkSign(line);
             String[] part = line.split("[*/+-]");
             String num1 = part[0];
