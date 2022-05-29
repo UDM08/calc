@@ -32,7 +32,7 @@ public class Main {
             }
             result = Main.calculator((part[0]), (part[1]), sign);
 
-            if (result.length() < 40)
+            if (result.length() <= 40)
                 System.out.println("Output:" + "\n" + "\"" + result + "\" ");
             else {
                 System.out.println("Output:" + "\n" + "\"" + result.substring(0, 41) + "(...)\"");
